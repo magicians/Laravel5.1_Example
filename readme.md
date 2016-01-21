@@ -28,7 +28,7 @@
 * Admin & Author home page
 * Authentication (registration, login, logout)
 * Users roles : Admin, Author
-* Admin : Audited mechanism( every article need be reviewed before publishing), Tag(edit, delete, create)
+* Admin : Audited mechanism (every article need be reviewed before publishing), Tag(create, edit, delete), User(create, edit, delete)
 * Author : Article (show, edit, delete, create)
 * Tags on articles
 

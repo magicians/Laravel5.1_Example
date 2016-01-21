@@ -35,13 +35,10 @@ class ArticleCreateRequest extends Request
 
 
     /**
-     * Return the fields and values to create a new post from
+     * Return the fields and values to create a new article from
      */
     public function articleFillData()
     {
-        if (!Auth::check()) {
-            abort(403);
-        }
         $user_id = Auth::id();
         $published_at = new Carbon(
             $this->publish_date . ' ' . $this->publish_time

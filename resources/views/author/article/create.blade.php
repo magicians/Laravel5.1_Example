@@ -120,7 +120,6 @@
                                 <div class="form-group">
                                     <div class="col-md-10 col-md-offset-2">
                                         <button type="submit" class="btn btn-primary btn-lg">
-                                            <i class="fa fa-disk-o"></i>
                                             Save New Article
                                         </button>
                                     </div>

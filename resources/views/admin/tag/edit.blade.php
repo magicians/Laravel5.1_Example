@@ -24,7 +24,6 @@
                         <form class="form-horizontal" role="form" method="POST" action="/admin/tag/{{ $id }}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="_method" value="PUT">
-                            <input type="hidden" name="id" value="{{ $id }}">
 
                             <div class="form-group">
                                 <label for="tag" class="col-md-3 control-label">Tag name</label>
@@ -67,7 +66,6 @@
                 </div>
                 <div class="modal-body">
                     <p class="lead">
-                        <i class="fa fa-question-circle fa-lg"></i>
                         Are you sure you want to delete this tag?
                     </p>
                 </div>

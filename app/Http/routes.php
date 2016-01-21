@@ -20,14 +20,14 @@ Route::resource('author/article', 'Author\ArticleController');
 Route::get('author/tag', 'Author\TagController@index');
 
 //route for the admins
-Route::resource('admin/article', 'Admin\ArticleController');
-Route::resource('admin/tag', 'Admin\TagController');
+Route::resource('admin/article', 'Admin\ArticleController',
+    ['only' => ['index', 'show', 'update']]);
+Route::resource('admin/tag', 'Admin\TagController',
+    ['except' => ['show']]);
+Route::resource('admin/user', 'Admin\UserController');
 
 // Authentication routes...
 Route::get('/login', 'Auth\AuthController@getLogin');
 Route::post('/login', 'Auth\AuthController@postLogin');
 Route::get('/logout', 'Auth\AuthController@getLogout');
 
-// Registration routes...
-Route::get('/register', 'Auth\AuthController@getRegister');
-Route::post('/register', 'Auth\AuthController@postRegister');

@@ -43,4 +43,12 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     {
         return $this->hasMany('App\Article');
     }
+
+    public function isAdmin()
+    {
+        if ($this->is_admin) {
+            return true;
+        }
+        return false;
+    }
 }

@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Support\Facades\Auth;
 
 
-class AdminMiddleware
+class CheckAdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,9 +15,12 @@ class AdminMiddleware
      * @param  \Closure $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $isAdmin)
     {
-        if (!Auth::user()->is_admin) {
+
+        if (!Auth::check()) {
+            return redirect('/login');
+        } elseif (Auth::user()->isAdmin() !== (bool)$isAdmin) {
             abort(401);
         }
         return $next($request);

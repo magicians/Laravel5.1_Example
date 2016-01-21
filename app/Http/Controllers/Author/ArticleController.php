@@ -17,8 +17,7 @@ class ArticleController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware('author');
+        $this->middleware('checkAdmin:0');
         $this->middleware('owner', ['except' => ['index', 'create', 'store']]);
     }
 

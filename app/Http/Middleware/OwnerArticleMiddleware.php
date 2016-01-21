@@ -19,10 +19,7 @@ class OwnerArticleMiddleware
     public function handle($request, Closure $next)
     {
         $article = Article::findOrFail($request->article);
-
-        if (!$article) {
-            abort(404);
-        }
+        
         if ($article->user_id !== Auth::id()) {
             abort(401);
         }

@@ -7,9 +7,9 @@
 * `git clone https://github.com/smile-zhao/Laravel5.1_Example.git ProjectName`
 * `cd ProjectName`
 * `composer install`
-* `php artisan key:generate`
 * Create a database and change in *`.env.example`*, 
 * Rename `.env.example` to `.env` (`mv .env.example .env`)
+* `php artisan key:generate`
 * `php artisan migrate --seed` create and seed the database
 * `php artisan serve` to start the app on http://localhost:8000/
 * All routes are informed in the file `App/Http/routes.php`

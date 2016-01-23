@@ -86,6 +86,10 @@ class ArticleController extends Controller
         if ($article->is_checked === 1) {
             abort(403);
         }
+
+        // Before being fed to the textarea of CKEditor '&'=>'&amp;'
+        $article->content = str_replace('&', '&amp;', $article->content);
+
         $tags = $article->tags()->lists('tag_id')->all();
         $allTags = Tag::lists('id', 'name')->all();
 

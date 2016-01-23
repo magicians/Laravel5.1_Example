@@ -18,7 +18,7 @@
                     @endif
                     <li>
                         <i class="glyphicon glyphicon-time"></i>
-                        Publish_at:
+                        Publish At:
                         {{$article->published_at}}
                     </li>
                 </ul>

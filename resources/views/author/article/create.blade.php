@@ -61,8 +61,8 @@
                                         </label>
 
                                         <div class="col-md-10">
-                                            <textarea class="form-control" name="content_mark" rows="14"
-                                                      id="content_mark">{{old('content_mark')}}</textarea>
+                                            <textarea class="form-control" name="content" rows="14"
+                                                      id="content">{{old('content')}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -141,6 +141,8 @@
     <script src="/assets/pickadate/picker.date.js"></script>
     <script src="/assets/pickadate/picker.time.js"></script>
     <script src="/assets/selectize/selectize.min.js"></script>
+    <script src="/ckeditor/ckeditor.js"></script>
+    <script src="/ckeditor/config.js"></script>
     <script>
         $(function () {
             $("#publish_date").pickadate({
@@ -155,5 +157,6 @@
                 placeholder: "add tag"
             });
         });
+        CKEDITOR.replace('content')
     </script>
 @stop

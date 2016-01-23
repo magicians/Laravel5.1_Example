@@ -21,7 +21,7 @@
 * [DataTables.js](https://www.datatables.net/) table plug-in for jQuery
 * [selectize.js](http://selectize.github.io/selectize.js/) for custom Select UI Control
 * [pickadate.js](http://amsul.ca/pickadate.js/) for date and time input picker
-* [Filemanager](https://github.com/simogeo/Filemanager) the easy file manager
+* [CKEditor](http://ckeditor.com) , a ready-for-use HTML text editor
 	
 ### Features ###
 
@@ -31,12 +31,6 @@
 * Admin : Audited mechanism (every article need be reviewed before publishing), Tag(create, edit, delete), User(create, edit, delete)
 * Author : Article (show, edit, delete, create)
 * Tags on articles
-
-### Packages included ###
-
-* [michelf/php-markdown](https://github.com/michelf/php-markdown) parser for Markdown and Markdown Extra
-* [michelf/php-smartypants](https://github.com/michelf/php-smartypants) web typography prettifyier tool for web writers
-* [mewebstudio/Purifier](https://github.com/mewebstudio/Purifier) HTML Purifier for Laravel 5
 
 ### Seeds ###
 For testing the application, the database is been seeded with users:

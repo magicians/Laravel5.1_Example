@@ -18,7 +18,6 @@ class CreateArticlesTable extends Migration
             $table->string('title');
             $table->text('intro');
             $table->text('content');
-            $table->text('content_mark');
             $table->timestamp('published_at');
             //0=>Under review 1=>Accepted 2=>Rejected
             $table->tinyInteger('is_checked')->default(0);

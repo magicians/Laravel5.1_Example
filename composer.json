@@ -10,10 +10,7 @@
   "require": {
     "php": ">=5.5.9",
     "laravel/framework": "5.1.*",
-    "barryvdh/laravel-ide-helper": "*",
-    "michelf/php-markdown": "~1.6",
-    "michelf/php-smartypants": "1.6.0-beta1",
-    "mews/purifier": "~2.0"
+    "barryvdh/laravel-ide-helper": "*"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",

@@ -13,7 +13,7 @@ class Article extends Model
         'user_id',
         'title',
         'intro',
-        'content_mark',
+        'content',
         'published_at',
         'is_checked',
         'is_draft',
@@ -62,20 +62,6 @@ class Article extends Model
     {
         $query->where('published_at', '<=', Carbon::now());
     }
-
-    /**
-     * Set the content automatically when the content_mark is set
-     *
-     * @param string $value
-     */
-    public function setContentMarkAttribute($value)
-    {
-        $markdown = new Markdowner();
-
-        $this->attributes['content_mark'] = $value;
-        $this->attributes['content'] = $markdown->toHTML($value);
-    }
-
 
     /**
      * Return the date portion of published_at

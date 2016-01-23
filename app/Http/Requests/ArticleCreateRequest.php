@@ -27,7 +27,7 @@ class ArticleCreateRequest extends Request
         return [
             'title' => 'required',
             'intro' => 'required',
-            'content_mark' => 'required',
+            'content' => 'required',
             'publish_date' => 'required',
             'publish_time' => 'required',
         ];
@@ -48,7 +48,7 @@ class ArticleCreateRequest extends Request
             'user_id' => $user_id,
             'title' => $this->title,
             'intro' => $this->intro,
-            'content_mark' => $this->get('content_mark'),
+            'content' => $this->get('content'),
             'published_at' => $published_at,
             'is_checked' => (boolean)$this->is_checked,
             'is_draft' => (boolean)$this->is_draft,

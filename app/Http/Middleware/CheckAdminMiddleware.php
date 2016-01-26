@@ -5,7 +5,6 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-
 class CheckAdminMiddleware
 {
     /**
@@ -21,7 +20,7 @@ class CheckAdminMiddleware
         if (!Auth::check()) {
             return redirect('/login');
         } elseif (Auth::user()->isAdmin() !== (bool)$isAdmin) {
-            abort(401);
+            abort(403);
         }
         return $next($request);
     }

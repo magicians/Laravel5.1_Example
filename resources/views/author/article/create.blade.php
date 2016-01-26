@@ -157,6 +157,7 @@
                 placeholder: "add tag"
             });
         });
-        CKEDITOR.replace('content')
+        CKEDITOR.replace('content');
+        CKEDITOR.config.filebrowserImageUploadUrl = "{{route('author.upload',['_token' => csrf_token() ])}}";
     </script>
 @stop

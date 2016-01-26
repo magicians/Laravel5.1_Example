@@ -5,8 +5,6 @@ namespace App;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Services\Markdowner;
-
 class Article extends Model
 {
     protected $fillable = [

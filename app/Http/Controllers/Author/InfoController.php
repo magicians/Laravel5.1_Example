@@ -5,11 +5,12 @@ namespace App\Http\Controllers\Author;
 use App\Http\Controllers\Controller;
 
 use Carbon\Carbon;
-use Validator;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Validator;
 
 class InfoController extends Controller
 {
@@ -31,15 +32,20 @@ class InfoController extends Controller
             return $validation->errors()->first();
         }
 
-        $image = array_get($input, 'upload');
-        $CKEditorFuncNum = array_get($input, 'CKEditorFuncNum');
-        $uploadDestination = public_path() . '/uploads/' . Auth::id();
+        $image = $input['upload'];
+        $CKEditorFuncNum = $input['CKEditorFuncNum'];
+
+        $now = Carbon::now();
+        $uploadDirectory = '/uploads/' . Auth::id() . '/' . $now->year . '/' . $now->month . '/';
+        $uploadDestination = public_path() . $uploadDirectory;
+
         if (!File::exists($uploadDestination)) {
-            File::makeDirectory($uploadDestination);
+            Storage::makeDirectory($uploadDestination);
         }
-        $imageName = Carbon::now()->timestamp . '.' . $image->getClientOriginalExtension();
+
+        $imageName = $now->timestamp . '.' . $image->getClientOriginalExtension();
         $image->move($uploadDestination, $imageName);
-        $imagePath = '/uploads/' . Auth::id() . '/' . $imageName;
+        $imagePath = $uploadDirectory . $imageName;
         return "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum,'$imagePath');</script>";
     }
 }

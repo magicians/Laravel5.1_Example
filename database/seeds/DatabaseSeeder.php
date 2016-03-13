@@ -33,17 +33,15 @@ class DatabaseSeeder extends Seeder
             'is_admin' => false,
         ]);
 
-        $tags = [];
+
         for ($i = 1; $i <= 10; $i++) {
-            $tag = Tag::create([
+            Tag::create([
                 'name' => 'Topic' . $i
             ]);
-            $tags[$i] = $tag;
         }
 
-        $articles = [];
         for ($i = 1; $i <= 100; $i++) {
-            $article = Article::create([
+            Article::create([
                 'user_id' => 2,
                 'title' => $faker->sentence($nbWords = 6, $variableNbWords = true),
                 'intro' => $faker->sentence($nbWords = 10, $variableNbWords = true),
@@ -52,8 +50,16 @@ class DatabaseSeeder extends Seeder
                 'is_checked' => $faker->numberBetween($min = 0, $max = 1),
                 'is_draft' => $faker->numberBetween($min = 0, $max = 1),
             ]);
-            $articles[$i] = $article;
         }
+
+        for ($i = 1; $i <= 100; $i++) {
+            $pivots[] = [
+                'article_id' => $i,
+                'tag_id' => $faker->numberBetween($min = 1, $max = 10)
+            ];
+        }
+
+        DB::table('article_tag')->insert($pivots);
 
         Model::reguard();
     }

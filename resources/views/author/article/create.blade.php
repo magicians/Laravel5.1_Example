@@ -159,5 +159,17 @@
         });
         CKEDITOR.replace('content');
         CKEDITOR.config.filebrowserImageUploadUrl = "{{route('author.upload',['_token' => csrf_token() ])}}";
+        // add class img-responsive
+        CKEDITOR.on('dialogDefinition', function (ev) {
+            var dialogName = ev.data.name;
+            var dialogDefinition = ev.data.definition;
+            if (dialogName == 'image2') {
+                var dialog = dialogDefinition.dialog;
+                dialog.on('ok', function () {
+                    var image = this.widget.parts.image;
+                    image.addClass('img-responsive');
+                });
+            }
+        });
     </script>
 @stop

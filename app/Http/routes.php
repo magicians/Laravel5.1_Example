@@ -11,24 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'User\UserController@index');
+
 
 // Routes for the authors
 Route::resource('author/article', 'Author\ArticleController');
 Route::get('author/tag', 'Author\TagController@index');
+
 // Upload the image
 Route::post('author/upload', [
     'as' => 'author.upload',
     'uses' => 'Author\InfoController@uploadImage'
 ]);
+
 //Browse the image
 Route::get('author/browse', [
     'as' => 'author.browse',
     'uses' => 'Author\InfoController@browseImage'
 ]);
-
 
 //route for the admins
 Route::resource('admin/article', 'Admin\ArticleController',

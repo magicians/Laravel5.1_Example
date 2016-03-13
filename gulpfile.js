@@ -7,7 +7,7 @@ var elixir = require('laravel-elixir');
  *
  * Do a 'gulp copyfiles' after bower updates
  */
-gulp.task("copyfiles", function() {
+gulp.task("copyfiles", function () {
 
     // Copy jQuery, Bootstrap
     gulp.src("vendor/bower_dl/jquery/dist/jquery.js")
@@ -15,6 +15,9 @@ gulp.task("copyfiles", function() {
 
     gulp.src("vendor/bower_dl/bootstrap/less/**")
         .pipe(gulp.dest("resources/assets/less/bootstrap"));
+
+    gulp.src("vendor/bower_dl/bootstrap-sass/**")
+        .pipe(gulp.dest("resources/assets/sass/bootstrap"));
 
     gulp.src("vendor/bower_dl/bootstrap/dist/js/bootstrap.js")
         .pipe(gulp.dest("resources/assets/js/"));
@@ -60,7 +63,7 @@ gulp.task("copyfiles", function() {
 /**
  * Default gulp is to run this elixir stuff
  */
-elixir(function(mix) {
+elixir(function (mix) {
 
     //combines scripts
     mix.scripts(
@@ -76,4 +79,7 @@ elixir(function(mix) {
 
     // Compile Less
     mix.less('admin.less', 'public/assets/css/admin.css');
+
+    // Compile sass
+    mix.sass('app.scss', 'public/assets/css/index.css');
 });

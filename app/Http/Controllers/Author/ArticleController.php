@@ -11,7 +11,7 @@ use App\Http\Requests;
 use App\Http\Requests\ArticleCreateRequest;
 use App\Http\Requests\ArticleUpdateRequest;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 
 class ArticleController extends Controller
 {

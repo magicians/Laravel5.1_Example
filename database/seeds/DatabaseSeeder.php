@@ -2,8 +2,11 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Faker\Factory;
 
 use App\User;
+use App\Tag;
+use App\Article;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,6 +19,8 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
+        $faker = Factory::create();
+
         User::create([
             'name' => 'admin',
             'password' => bcrypt('admin'),
@@ -27,6 +32,28 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('author'),
             'is_admin' => false,
         ]);
+
+        $tags = [];
+        for ($i = 1; $i <= 10; $i++) {
+            $tag = Tag::create([
+                'name' => 'Topic' . $i
+            ]);
+            $tags[$i] = $tag;
+        }
+
+        $articles = [];
+        for ($i = 1; $i <= 100; $i++) {
+            $article = Article::create([
+                'user_id' => 2,
+                'title' => $faker->sentence($nbWords = 6, $variableNbWords = true),
+                'intro' => $faker->sentence($nbWords = 10, $variableNbWords = true),
+                'content' => $faker->text,
+                'published_at' => Carbon\Carbon::now(),
+                'is_checked' => $faker->numberBetween($min = 0, $max = 1),
+                'is_draft' => $faker->numberBetween($min = 0, $max = 1),
+            ]);
+            $articles[$i] = $article;
+        }
 
         Model::reguard();
     }

@@ -24,7 +24,8 @@ class ArticleController extends Controller
     public function index()
     {
         return view('admin.article.index')
-            ->withArticles(Article::where('is_draft', false)->get());
+            ->withArticles(Article::where('is_draft', false)->published()
+                ->select('id', 'user_id', 'title', 'intro', 'published_at', 'is_checked')->get());
     }
 
     /**

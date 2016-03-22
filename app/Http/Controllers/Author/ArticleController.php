@@ -30,7 +30,8 @@ class ArticleController extends Controller
     {
 
         return view('author.article.index')
-            ->withArticles(Article::where('user_id', Auth::id())->get());
+            ->withArticles(Article::where('user_id', Auth::id())
+                ->select('id', 'title', 'intro', 'published_at', 'is_checked')->get());
     }
 
     /**

@@ -14,26 +14,67 @@
 <body>
 
 {{-- Navigation Bar --}}
-<nav class="navbar navbar-default">
+<header class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar">
                 <span class="sr-only">Toggle Navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">{{config('news.title')}}</a>
+            <a class="navbar-brand" href="../"><img src="/assets/image/logo.png"></a>
         </div>
-        <div class="collapse navbar-collapse" id="navbar-menu">
-            @include('front.nav')
-        </div>
+        <nav id="bs-navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="visible-xs">
+                    <form action="" method="GET" role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="q" placeholder="Search for snippets">
+								<span class="input-group-btn">
+									<button class="btn btn-primary" type="submit">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+									<button class="btn btn-danger" type="reset">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </button>
+								</span>
+                        </div>
+                    </form>
+                </li>
+                @include('front.nav')
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden-xs">
+                    <a href="#toggle-search" class="animate">
+                        <span class="iconfont">&#xe600;</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="news-search animate">
+                <div class="container">
+                    <form action="" method="GET" role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="q"
+                                   placeholder="Search for snippets and hit enter">
+						<span class="input-group-btn">
+							<button class="btn btn-danger" type="reset">
+                                <span class="iconfont">&#xe6f5;</span>
+                            </button>
+						</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
     </div>
-</nav>
+</header>
+
 
 @yield('content')
 
-<script src="/assets/js/admin.js"></script>
+<script src="/assets/js/libraries.min.js"></script>
+<script src="/assets/js/index.js"></script>
 
 @yield('scripts')
 

@@ -20,9 +20,9 @@
                     <thead>
                     <tr>
                         <th>Title</th>
-                        <th>Username / Nickname</th>
+                        <th>Carousel</th>
                         <th>Publish_at</th>
-                        <th>Status</th>
+                        <th>Publish_at</th>
                         <th data-sortable="false">Actions</th>
                     </tr>
                     </thead>
@@ -30,7 +30,9 @@
                     @foreach ($articles as $article)
                         <tr>
                             <td>{{ $article->title }}</td>
-                            <td>{{ $article->user->name }} / {{$article->user->pen_name}}</td>
+                            <td data-order="{{ $article->published_at->timestamp }}">
+                                {{ $article->published_at->format('j-M-y H:i') }}
+                            </td>
                             <td data-order="{{ $article->published_at->timestamp }}">
                                 {{ $article->published_at->format('j-M-y H:i') }}
                             </td>

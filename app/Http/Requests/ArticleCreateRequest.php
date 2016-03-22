@@ -48,6 +48,7 @@ class ArticleCreateRequest extends Request
             'user_id' => $user_id,
             'title' => $this->title,
             'intro' => $this->intro,
+            'page_image' => $this->page_image,
             'content' => $this->get('content'),
             'published_at' => $published_at,
             'is_checked' => (boolean)$this->is_checked,

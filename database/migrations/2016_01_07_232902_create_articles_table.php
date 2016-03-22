@@ -17,6 +17,7 @@ class CreateArticlesTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('title');
             $table->text('intro');
+            $table->string('page_image');
             $table->text('content');
             $table->timestamp('published_at');
             //0=>Under review 1=>Accepted 2=>Rejected

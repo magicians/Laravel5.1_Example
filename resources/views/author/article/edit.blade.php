@@ -56,7 +56,28 @@
                                                    value="{{$article->intro}}">
                                         </div>
                                     </div>
-
+                                    <div class="form-group">
+                                        <label for="page_image" class="col-md-2 control-label">
+                                            Page Image
+                                        </label>
+                                        <div class="col-md-10">
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-6">
+                                                    <input type="file" class="form-control" name="image"
+                                                           id="image" alt="Image thumbnail">
+                                                    <input type="hidden" class="form-control" name="page_image"
+                                                           id="page_image" alt="Image thumbnail"
+                                                           value="{{$article->page_image}}">
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 text-right">
+                                                    <img src="{{$article->page_image}}" class="img img_responsive"
+                                                         id="page-image-preview" style="max-height:40px">
+                                                </div>
+                                                <div class="col-md-6 col-sm-6" id="validation-errors">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label for="content" class="col-md-2 control-label">
                                             Content
@@ -215,6 +236,30 @@
                     image.addClass('img-responsive');
                 });
             }
+        });
+
+        $("#image").change(function () {
+            var form_data = new FormData();
+            form_data.append("image", $(this).prop('files')[0]);
+            var options = {
+                url: "{{route('author.pageImage',['_token' => csrf_token()])}}",
+                method: "post",
+                processData: false, // important
+                contentType: false, // important
+                data: form_data,
+                success: function (response) {
+                    if (response.success) {
+                        $('#page-image-preview').attr("src", response.file);
+                        $('#page_image').val(response.file);
+                    } else {
+                        $("#validation-errors").append('<em>' + response.errors + '</em>');
+                    }
+                },
+                error: function (response) {
+
+                }
+            };
+            $.ajax(options);
         });
     </script>
 @stop

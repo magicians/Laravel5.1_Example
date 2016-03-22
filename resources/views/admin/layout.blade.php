@@ -33,7 +33,8 @@
 
 @yield('content')
 
-<script src="/assets/js/admin.js"></script>
+<script src="/assets/js/libraries.min.js"></script>
+<script src="/assets/js/plugins.min.js"></script>
 
 @yield('scripts')
 

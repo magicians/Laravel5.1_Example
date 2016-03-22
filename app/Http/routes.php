@@ -23,6 +23,10 @@ Route::post('author/upload', [
     'as' => 'author.upload',
     'uses' => 'Author\InfoController@uploadImage'
 ]);
+Route::post('author/pageImage', [
+    'as' => 'author.pageImage',
+    'uses' => 'Author\InfoController@uploadPageImage'
+]);
 
 //Browse the image
 Route::get('author/browse', [

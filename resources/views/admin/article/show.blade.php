@@ -7,6 +7,8 @@
                 <h3>
                     {{$article->title}}
                 </h3>
+                <img src="{{$article->page_image}}" class="img img_responsive"
+                     id="page-image-preview" style="max-height:100px">
                 <ul class="list-inline">
                     @if($article->tags)
                         @foreach($article->tags as $tag)
@@ -26,6 +28,26 @@
                         {{$article->user->pen_name}}
                     </li>
                 </ul>
+                <p>Status:
+                    @if($article->is_checked===0)
+                        <i class="glyphicon glyphicon-time"></i>
+                        Under review
+                    @elseif($article->is_checked===1)
+                        <i class="glyphicon glyphicon-ok"></i>
+                        Accepted
+                    @else
+                        <i class="glyphicon glyphicon-remove"></i>
+                        Rejected
+                    @endif
+                </p>
+                <p>Intro: {{$article->intro}}</p>
+                <p>Carousel:
+                    @if($article->is_carousel)
+                        Yes
+                    @else
+                        No
+                    @endif
+                </p>
             </div>
         </div>
         <hr class="col-lg-10 col-md-10">
@@ -61,6 +83,17 @@
                                 <i class="glyphicon glyphicon-time"></i>
                                 Under review?
                             </button>
+                            @if($article->is_carousel)
+                                <button type="submit" class="btn btn-info"
+                                        name="carousel" value="0">
+                                    Remove carousel
+                                </button>
+                            @else
+                                <button type="submit" class="btn btn-info"
+                                        name="carousel" value="1">
+                                    Set carousel
+                                </button>
+                            @endif
                         </div>
                     </div>
                 </form>

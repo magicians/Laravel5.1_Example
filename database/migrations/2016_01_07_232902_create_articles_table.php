@@ -17,6 +17,7 @@ class CreateArticlesTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('title');
             $table->text('intro');
+            $table->string('is_carousel')->default(false);
             $table->string('page_image');
             $table->text('content');
             $table->timestamp('published_at');

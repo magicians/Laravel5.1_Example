@@ -18,6 +18,8 @@ class Article extends Model
         'is_draft',
     ];
 
+    protected $hidden = ['created_at', 'updated_at'];
+
     protected $dates = ['published_at']; //carbon objects;
 
     /**

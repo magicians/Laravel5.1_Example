@@ -30,8 +30,10 @@
                     @foreach ($articles as $article)
                         <tr>
                             <td>{{ $article->title }}</td>
-                            <td data-order="{{ $article->published_at->timestamp }}">
-                                {{ $article->published_at->format('j-M-y H:i') }}
+                            <td>
+                                @if($article->is_carousel)
+                                    Yes
+                                @endif
                             </td>
                             <td data-order="{{ $article->published_at->timestamp }}">
                                 {{ $article->published_at->format('j-M-y H:i') }}

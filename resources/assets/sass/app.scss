@@ -64,6 +64,7 @@ $navbar-default-link-hover-bg: #3468a2;
 
 .news-search {
   display: none;
+  z-index: 1;
   .container {
     width: 100%;
   }
@@ -106,4 +107,16 @@ $navbar-default-link-hover-bg: #3468a2;
       padding: 0;
     }
   }
+}
+
+.carousel {
+  max-height: 500px;
+  @media (min-width: $grid-float-breakpoint) {
+    width: 570px;
+    height: 385px;
+  }
+}
+
+.carousel-inner {
+  height: 100%;
 }

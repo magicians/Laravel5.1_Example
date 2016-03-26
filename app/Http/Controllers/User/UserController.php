@@ -21,10 +21,8 @@ class UserController extends Controller
     public function index()
     {
         $tags = Tag::all();
-        foreach ($tags as $tag) {
-            $latest_posts_by_tag[] = $tag->articles()->published()->where("is_checked", true)->orderBy('published_at',
-                'desc')->take(2)->get();
-        }
-        return view('front.index')->withTags($tags)->withArticles($latest_posts_by_tag);
+        $carousel_news = Article::select('id', 'title', 'page_image')->where('is_checked',
+            true)->where('is_carousel', true)->orderBy('published_at', 'desc')->get();
+        return view('front.index')->withTags($tags)->with('carousel_news', $carousel_news);
     }
 }

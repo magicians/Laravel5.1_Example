@@ -83,16 +83,18 @@
                                 <i class="glyphicon glyphicon-time"></i>
                                 Under review?
                             </button>
-                            @if($article->is_carousel)
-                                <button type="submit" class="btn btn-info"
-                                        name="carousel" value="0">
-                                    Remove carousel
-                                </button>
-                            @else
-                                <button type="submit" class="btn btn-info"
-                                        name="carousel" value="1">
-                                    Set carousel
-                                </button>
+                            @if($article->is_checked===1)
+                                @if($article->is_carousel)
+                                    <button type="submit" class="btn btn-info"
+                                            name="carousel" value="0">
+                                        Remove carousel
+                                    </button>
+                                @else
+                                    <button type="submit" class="btn btn-info"
+                                            name="carousel" value="1">
+                                        Set carousel
+                                    </button>
+                                @endif
                             @endif
                         </div>
                     </div>

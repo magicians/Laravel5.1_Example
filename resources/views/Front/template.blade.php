@@ -33,10 +33,10 @@
                             <input type="text" class="form-control" name="q" placeholder="Search for snippets">
 								<span class="input-group-btn">
 									<button class="btn btn-primary" type="submit">
-                                        <span class="glyphicon glyphicon-search"></span>
+                                        <span class="iconfont">&#xe674;</span>
                                     </button>
 									<button class="btn btn-danger" type="reset">
-                                        <span class="glyphicon glyphicon-remove"></span>
+                                        <span class="iconfont">&#xe661;</span>
                                     </button>
 								</span>
                         </div>
@@ -47,7 +47,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="hidden-xs">
                     <a href="#toggle-search" class="animate">
-                        <span class="iconfont">&#xe600;</span>
+                        <span class="iconfont">&#xe674;</span>
                     </a>
                 </li>
             </ul>
@@ -59,13 +59,14 @@
                                    placeholder="Search for snippets and hit enter">
 						<span class="input-group-btn">
 							<button class="btn btn-danger" type="reset">
-                                <span class="iconfont">&#xe6f5;</span>
+                                <span class="iconfont">&#xe661;</span>
                             </button>
 						</span>
                         </div>
                     </form>
                 </div>
             </div>
+
         </nav>
     </div>
 </header>

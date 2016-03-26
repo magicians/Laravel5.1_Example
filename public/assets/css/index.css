@@ -6508,10 +6508,8 @@ button.close {
   filter: alpha(opacity=90);
 }
 
-.carousel-control .icon-prev,
-.carousel-control .icon-next,
-.carousel-control .glyphicon-chevron-left,
-.carousel-control .glyphicon-chevron-right {
+.carousel-control .iconfont-left,
+.carousel-control .iconfont-right {
   position: absolute;
   top: 50%;
   margin-top: -10px;
@@ -6519,32 +6517,14 @@ button.close {
   display: inline-block;
 }
 
-.carousel-control .icon-prev,
-.carousel-control .glyphicon-chevron-left {
+.carousel-control .iconfont-left {
   left: 50%;
   margin-left: -10px;
 }
 
-.carousel-control .icon-next,
-.carousel-control .glyphicon-chevron-right {
+.carousel-control .iconfont-right {
   right: 50%;
   margin-right: -10px;
-}
-
-.carousel-control .icon-prev,
-.carousel-control .icon-next {
-  width: 20px;
-  height: 20px;
-  line-height: 1;
-  font-family: serif;
-}
-
-.carousel-control .icon-prev:before {
-  content: '\2039';
-}
-
-.carousel-control .icon-next:before {
-  content: '\203a';
 }
 
 .carousel-indicators {
@@ -6597,23 +6577,19 @@ button.close {
 }
 
 @media screen and (min-width: 768px) {
-  .carousel-control .glyphicon-chevron-left,
-  .carousel-control .glyphicon-chevron-right,
-  .carousel-control .icon-prev,
-  .carousel-control .icon-next {
+  .carousel-control .iconfont-left,
+  .carousel-control .iconfont-right {
     width: 30px;
     height: 30px;
     margin-top: -10px;
     font-size: 30px;
   }
 
-  .carousel-control .glyphicon-chevron-left,
-  .carousel-control .icon-prev {
+  .carousel-control .iconfont-left {
     margin-left: -10px;
   }
 
-  .carousel-control .glyphicon-chevron-right,
-  .carousel-control .icon-next {
+  .carousel-control .iconfont-right {
     margin-right: -10px;
   }
 
@@ -6966,6 +6942,7 @@ button.close {
 
 .news-search {
   display: none;
+  z-index: 1;
 }
 
 .news-search .container {
@@ -7017,4 +6994,19 @@ button.close {
   .news-search > .container {
     padding: 0;
   }
+}
+
+.carousel {
+  max-height: 500px;
+}
+
+@media (min-width: 768px) {
+  .carousel {
+    width: 570px;
+    height: 385px;
+  }
+}
+
+.carousel-inner {
+  height: 100%;
 }

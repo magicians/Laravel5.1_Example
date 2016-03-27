@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
                 'title' => $faker->sentence($nbWords = 6, $variableNbWords = true),
                 'is_carousel' => false,
                 'intro' => $faker->sentence($nbWords = 10, $variableNbWords = true),
-                'page_image' => $faker->imageUrl($width = 640, $height = 480),
+                'page_image' => $faker->imageUrl($width = 640, $height = 360),
                 'content' => $faker->text,
                 'published_at' => Carbon\Carbon::now(),
                 'is_checked' => $faker->numberBetween($min = 0, $max = 1),

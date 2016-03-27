@@ -23,6 +23,7 @@ body {
 @import "bootstrap/assets/stylesheets/bootstrap/_variables";
 
 $navbar-default-bg: #6ca1dd;
+$navbar-margin-bottom: 0px;
 $navbar-border-radius: 0;
 $navbar-default-toggle-border-color: transparent;
 $navbar-default-link-color: #FFF;
@@ -109,14 +110,47 @@ $navbar-default-link-hover-bg: #3468a2;
   }
 }
 
-.carousel {
-  max-height: 500px;
-  @media (min-width: $grid-float-breakpoint) {
-    width: 570px;
-    height: 385px;
+.img {
+  max-width: 640px;
+  max-height: 360px;
+}
+
+.module-highlight {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #F0F6F7;
+}
+
+.module-highlight .row {
+  margin: 0 auto;
+  padding: 0 16px;
+  @media (min-width: $screen-lg-min) {
+    max-width: 1280px;
   }
 }
 
 .carousel-inner {
   height: 100%;
+  > .item {
+    > img,
+    > a > img {
+      width: 100%;
+    }
+  }
+}
+
+.module {
+  display: inline-block;
+  position: relative;
+  > .latest-caption {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    padding-left: 20px;
+    width: 100%;
+  }
+  @media (min-width: $screen-lg-min) {
+    padding: 0 5px;
+    margin-bottom: 10px;
+  }
 }

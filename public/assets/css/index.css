@@ -754,8 +754,8 @@ pre code {
 .col-lg-12 {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .col-xs-1,
@@ -3884,7 +3884,7 @@ tbody.collapse.in {
 .navbar {
   position: relative;
   min-height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   border: 1px solid transparent;
 }
 
@@ -6397,6 +6397,7 @@ button.close {
   max-width: 100%;
   height: auto;
   line-height: 1;
+  margin: auto;
 }
 
 @media all and (transform-3d), (-webkit-transform-3d) {
@@ -6996,17 +6997,48 @@ button.close {
   }
 }
 
-.carousel {
-  max-height: 500px;
+.module-highlight {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #F0F6F7;
 }
 
-@media (min-width: 768px) {
-  .carousel {
-    width: 570px;
-    height: 385px;
+.module-highlight .row {
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (min-width: 1200px) {
+  .module-highlight .row {
+    max-width: 1280px;
   }
 }
 
 .carousel-inner {
   height: 100%;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 100%;
+}
+
+.module {
+  display: inline-block;
+  position: relative;
+}
+
+.module > .latest-caption {
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  padding-left: 20px;
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .module {
+    padding: 0 5px;
+    margin-bottom: 10px;
+  }
 }

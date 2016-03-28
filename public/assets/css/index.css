@@ -6486,18 +6486,9 @@ button.close {
   background-color: transparent;
 }
 
-.carousel-control.left {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
-}
-
 .carousel-control.right {
   left: auto;
   right: 0;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
 }
 
 .carousel-control:hover,
@@ -7000,45 +6991,77 @@ button.close {
 .module-highlight {
   margin: 0;
   padding: 10px 0;
-  background-color: #F0F6F7;
 }
 
-.module-highlight .row {
+@media (min-width: 768px) {
+  .module-highlight {
+    background-color: #F0F6F7;
+  }
+}
+
+.module-highlight > .row {
   margin: 0 auto;
   padding: 0 16px;
 }
 
 @media (min-width: 1200px) {
-  .module-highlight .row {
+  .module-highlight > .row {
     max-width: 1280px;
   }
 }
 
-.carousel-inner {
-  height: 100%;
+.carousel {
+  padding: 0 5px 5px;
 }
 
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
+@media (max-width: 768px) {
+  .carousel {
+    margin-bottom: 10px;
+  }
+}
+
+.responsive-image {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.responsive-image > img {
   width: 100%;
 }
 
 .module {
   display: inline-block;
   position: relative;
+  padding: 0 5px 5px;
+}
+
+@media (max-width: 768px) {
+  .module {
+    margin-bottom: 10px;
+    width: 100%;
+    border-bottom: 1px solid #d3d3d3;
+  }
+
+  .module > .latest-intro {
+    color: #878c92;
+  }
 }
 
 .module > .latest-caption {
   position: absolute;
-  bottom: 0;
-  color: #fff;
-  padding-left: 20px;
-  width: 100%;
+  bottom: 5px;
+  right: 5px;
+  left: 5px;
+  color: #d3d3d3;
+  padding-left: 5px;
 }
 
-@media (min-width: 1200px) {
-  .module {
-    padding: 0 5px;
-    margin-bottom: 10px;
+@media (max-width: 768px) {
+  .module > .latest-caption {
+    color: #000;
+    position: relative;
+    padding: 0;
+    left: 0;
   }
 }

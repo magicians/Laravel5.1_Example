@@ -110,47 +110,61 @@ $navbar-default-link-hover-bg: #3468a2;
   }
 }
 
-.img {
-  max-width: 640px;
-  max-height: 360px;
-}
-
 .module-highlight {
   margin: 0;
   padding: 10px 0;
-  background-color: #F0F6F7;
-}
-
-.module-highlight .row {
-  margin: 0 auto;
-  padding: 0 16px;
-  @media (min-width: $screen-lg-min) {
-    max-width: 1280px;
+  @media (min-width: $screen-sm-min) {
+    background-color: #F0F6F7;
+  }
+  > .row {
+    margin: 0 auto;
+    padding: 0 16px;
+    @media (min-width: $screen-lg-min) {
+      max-width: 1280px;
+    }
   }
 }
 
-.carousel-inner {
-  height: 100%;
-  > .item {
-    > img,
-    > a > img {
-      width: 100%;
-    }
+.carousel {
+  padding: 0 5px 5px;
+  @media (max-width: $screen-sm-min) {
+    margin-bottom: 10px;
+  }
+}
+
+.responsive-image {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  > img {
+    width: 100%;
   }
 }
 
 .module {
   display: inline-block;
   position: relative;
+  padding: 0 5px 5px;
+  @media (max-width: $screen-sm-min) {
+    margin-bottom: 10px;
+    width: 100%;
+    border-bottom: 1px solid #d3d3d3;
+    > .latest-intro {
+      color: #878c92;
+    }
+  }
   > .latest-caption {
     position: absolute;
-    bottom: 0;
-    color: #fff;
-    padding-left: 20px;
-    width: 100%;
-  }
-  @media (min-width: $screen-lg-min) {
-    padding: 0 5px;
-    margin-bottom: 10px;
+    bottom: 5px;
+    right: 5px;
+    left: 5px;
+    color: #d3d3d3;
+    padding-left: 5px;
+    @media (max-width: $screen-sm-min) {
+      color: #000;
+      position: relative;
+      padding: 0;
+      left: 0;
+    }
   }
 }

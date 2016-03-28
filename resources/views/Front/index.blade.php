@@ -16,7 +16,10 @@
                     <div class="carousel-inner" role="listbox">
                         @for ($i = 0; $i < count($carousel_news); $i++)
                             <div class="item @if($i==0) active @endif">
-                                <img src="{{$carousel_news[$i]->page_image}}" alt="Carousel News">
+                                <div class="responsive-image">
+                                    <img src="{{$carousel_news[$i]->page_image}}" alt="Carousel News"
+                                         class="img-responsive">
+                                </div>
                                 <div class="carousel-caption">
                                     {{$carousel_news[$i]->title}}
                                 </div>
@@ -37,8 +40,15 @@
                 <div class="col-sm-12 col-md-6">
                     @foreach($latest_news as $news)
                         <div class=" module col-sm-6 col-lg-6">
-                            <img src="{{$news->page_image}}" alt="{{$news->title}}" class="img-responsive">
-                            <div class="latest-caption"><strong>{{$news->title}}</strong></div>
+                            <div class="responsive-image hidden-xs">
+                                <img src="{{$news->page_image}}" alt="{{$news->title}}" class="img-responsive">
+                            </div>
+                            <div class="latest-caption">
+                                <strong>{{$news->title}}</strong>
+                            </div>
+                            <div class="latest-intro visible-xs">
+                                {{$news->intro}}
+                            </div>
                         </div>
                     @endforeach
                 </div>

@@ -112,15 +112,45 @@ $navbar-default-link-hover-bg: #3468a2;
 
 .module-highlight {
   margin: 0;
-  padding: 10px 0;
+  padding: 0;
   @media (min-width: $screen-sm-min) {
     background-color: #F0F6F7;
   }
-  > .row {
-    margin: 0 auto;
-    padding: 0 16px;
-    @media (min-width: $screen-lg-min) {
-      max-width: 1280px;
+}
+
+.row {
+  margin: 0 auto;
+  padding: 10px 15px;
+  @media (min-width: $screen-lg-min) {
+    max-width: 1280px;
+  }
+}
+
+.article-layout-flex {
+  @media (min-width: $screen-sm-min) {
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    > .article-item {
+      padding: 0 5px;
+    }
+  }
+}
+
+.article_content {
+  @media (min-width: $screen-sm-min) {
+    > .article_title {
+      font-size: 16px;
+      color: #222;
+    }
+    > .article_intro {
+      font-size: 14px;
+      color: #8b8b8b;
     }
   }
 }

@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'User\UserController@index');
-
+Route::get('/subject/{id}', 'User\UserController@subject');
 
 // Routes for the authors
 Route::resource('author/article', 'Author\ArticleController');

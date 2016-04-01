@@ -13,6 +13,7 @@
                                 <h3 class="article-title">{{$article->title}}</h3>
                                 <p class="article-intro">{{$article->intro}}</p>
                             </div>
+                            <a class="article-link" href="/article/{{$article->id}}"></a>
                         </article>
                     </div>
                 @endforeach

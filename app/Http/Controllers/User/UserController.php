@@ -12,8 +12,6 @@ class UserController extends Controller
 {
     /**
      * Display the home page.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -29,9 +27,8 @@ class UserController extends Controller
     /**
      * Display the home page.
      *
-     * @param int $id category's name
+     * @param int $id category's id
      *
-     * @return \Illuminate\Http\Response
      */
     public function subject($id)
     {
@@ -42,5 +39,20 @@ class UserController extends Controller
             ->orderBy('published_at', 'desc')
             ->paginate(10);
         return view('front.category')->with('articles', $articles);
+    }
+
+    /**
+     * Display the home page.
+     *
+     * @param int $id article's id
+     *
+     */
+    public function showArticle($id)
+    {
+        $article = Article::findorfail($id);
+        if ($article->is_checked == false) {
+            abort(404);
+        }
+        return view('front.article')->with('article', $article);
     }
 }

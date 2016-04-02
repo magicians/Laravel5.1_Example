@@ -133,7 +133,6 @@ $navbar-default-link-hover-bg: #3468a2;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: wrap;
-    -moz-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     > .article-list {
@@ -249,5 +248,20 @@ $navbar-default-link-hover-bg: #3468a2;
         font-size: 0.8em;
       }
     }
+  }
+}
+
+.article-body {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+  @media (min-width: $screen-lg-min) {
+    width: 970px;
+  }
+  > .article-info {
+    color: #737373;
+    border-bottom: 1px solid #dcdcdc;
+    margin-bottom: 16px;
   }
 }

@@ -5446,14 +5446,6 @@ button.close {
   color: #8b8b8b;
 }
 
-.article-item > .article-link {
-  top: 0;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
 @media (min-width: 768px) {
   .article-item > .article-text > .article-title {
     font-size: 1.1em;
@@ -5503,6 +5495,14 @@ button.close {
   .article-item > .article-text > .article-intro {
     font-size: 0.8em;
   }
+}
+
+.article-link {
+  top: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .article-body {

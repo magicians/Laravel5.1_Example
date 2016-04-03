@@ -23,6 +23,7 @@
                                 <div class="carousel-caption">
                                     {{$carousel_news[$i]->title}}
                                 </div>
+                                <a class="article-link" href="/article/{{$carousel_news[$i]->id}}"></a>
                             </div>
                         @endfor
                     </div>
@@ -39,7 +40,7 @@
                 </div>
                 <div class="col-sm-12 col-md-6">
                     @foreach($latest_news as $news)
-                        <div class=" module col-sm-6 col-lg-6">
+                        <div class="module col-sm-6 col-lg-6">
                             <div class="responsive-image hidden-xs">
                                 <img src="{{$news->page_image}}" alt="{{$news->title}}" class="img-responsive">
                             </div>
@@ -49,6 +50,7 @@
                             <div class="latest-intro visible-xs">
                                 {{$news->intro}}
                             </div>
+                            <a class="article-link" href="/article/{{$news->id}}"></a>
                         </div>
                     @endforeach
                 </div>

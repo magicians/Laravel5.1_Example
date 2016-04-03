@@ -193,13 +193,6 @@ $navbar-default-link-hover-bg: #3468a2;
       color: #8b8b8b;
     }
   }
-  > .article-link {
-    top: 0;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
   @media (min-width: $screen-sm-min) {
     > .article-text {
       > .article-title {
@@ -249,6 +242,14 @@ $navbar-default-link-hover-bg: #3468a2;
       }
     }
   }
+}
+
+.article-link {
+  top: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .article-body {

@@ -37,12 +37,12 @@
                             <div class="form-group">
                                 <div class="col-md-7 col-md-offset-3">
                                     <button type="submit" class="btn btn-primary btn-md">
-                                        <i class="fa fa-save"></i>
+                                        <i class="glyphicon glyphicon-floppy-disk"></i>
                                         Save Changes
                                     </button>
                                     <button type="button" class="btn btn-danger btn-md" data-toggle="modal"
                                             data-target="#modal-delete">
-                                        <i class="fa fa-times-circle"></i>
+                                        <i class="glyphicon glyphicon-remove"></i>
                                         Delete
                                     </button>
 
@@ -75,7 +75,7 @@
                         <input type="hidden" name="_method" value="DELETE">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-danger">
-                            <i class="fa fa-times-circle"></i> Yes
+                            <i class="glyphicon glyphicon-remove"></i> Yes
                         </button>
                     </form>
                 </div>

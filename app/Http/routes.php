@@ -41,7 +41,7 @@ Route::resource('admin/article', 'Admin\ArticleController',
 Route::resource('admin/tag', 'Admin\TagController',
     ['except' => ['show']]);
 Route::resource('admin/user', 'Admin\UserController');
-Route::resource('admin/ads', 'Admin\AdController');
+Route::resource('admin/ad', 'Admin\AdController');
 
 // Authentication routes...
 Route::get('/login', 'Auth\AuthController@getLogin');

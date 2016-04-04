@@ -9,8 +9,8 @@
         <li @if (Request::is('admin/user*')) class="active" @endif>
             <a href="/admin/user">Users</a>
         </li>
-        <li @if (Request::is('admin/ads*')) class="active" @endif>
-            <a href="/admin/ads">Ads</a>
+        <li @if (Request::is('admin/ad*')) class="active" @endif>
+            <a href="/admin/ad">Ads</a>
         </li>
     </ul>
 @endif

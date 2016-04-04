@@ -35,7 +35,7 @@
                             <div class="form-group">
                                 <div class="col-md-7 col-md-offset-3">
                                     <button type="submit" class="btn btn-primary btn-md">
-                                        <i class="fa fa-plus-circle"></i>
+                                        <i class="glyphicon glyphicon-floppy-disk"></i>
                                         Add New Tag
                                     </button>
                                 </div>

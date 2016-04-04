@@ -29,27 +29,6 @@ class ArticleController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  int $id
@@ -59,17 +38,6 @@ class ArticleController extends Controller
     {
         $article = Article::findOrFail($id);
         return view('admin.article.show')->withArticle($article);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
     }
 
     /**
@@ -90,7 +58,7 @@ class ArticleController extends Controller
         } elseif ($request->action === 'review') {
             $article->is_checked = 0;
         }
-        
+
         if ($request->carousel == '1') {
             $article->is_carousel = true;
         } elseif ($request->carousel == '0') {
@@ -100,16 +68,5 @@ class ArticleController extends Controller
         return redirect()
             ->route('admin.article.index')
             ->withSuccess($article->title . 'has been changed');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-
     }
 }

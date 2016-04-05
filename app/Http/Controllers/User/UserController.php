@@ -16,11 +16,19 @@ class UserController extends Controller
      */
     public function index()
     {
-        $carousel_news = Article::select('id', 'title', 'page_image')->where('is_checked', true)
-            ->where('is_carousel', true)->get();
-        $latest_news = Article::select('id', 'title', 'intro', 'page_image')->where('is_checked', true)
-            ->orderBy('published_at', 'desc')->take(4)->get();
-        $ads = Ad::select('url', 'name', 'image_path')->orderBy('created_at', 'desc')->take(2)->get();
+        $carousel_news = Article::select('id', 'title', 'page_image')
+            ->where('is_checked', true)
+            ->where('is_carousel', true)
+            ->published()
+            ->get();
+        $latest_news = Article::select('id', 'title', 'intro', 'page_image')
+            ->where('is_checked', true)
+            ->published()
+            ->orderBy('published_at', 'desc')
+            ->take(4)->get();
+        $ads = Ad::select('url', 'name', 'image_path')
+            ->orderBy('created_at', 'desc')
+            ->take(2)->get();
         return view('front.index')
             ->with('carousel_news', $carousel_news)
             ->with('latest_news', $latest_news)
@@ -72,6 +80,8 @@ class UserController extends Controller
         if (isset($keyword) && trim($keyword) != "") {
             $results = Article::select('id', 'title', 'intro', 'page_image')
                 ->where('title', 'LIKE', '%' . $keyword . '%')
+                ->where('is_checked', true)
+                ->published()
                 ->get();
         }
         return view('front.search')->with('articles', $results);

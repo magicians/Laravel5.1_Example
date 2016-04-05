@@ -22,7 +22,7 @@ class ArticleController extends Controller
     public function index()
     {
         return view('admin.article.index')
-            ->withArticles(Article::where('is_draft', false)->published()
+            ->withArticles(Article::where('is_draft', false)
                 ->select('id', 'user_id', 'title', 'intro', 'is_carousel', 'published_at', 'is_checked')->get());
     }
 

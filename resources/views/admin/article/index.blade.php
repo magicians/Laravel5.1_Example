@@ -22,7 +22,7 @@
                         <th>Title</th>
                         <th>Carousel</th>
                         <th>Publish_at</th>
-                        <th>Publish_at</th>
+                        <th>Status</th>
                         <th data-sortable="false">Actions</th>
                     </tr>
                     </thead>

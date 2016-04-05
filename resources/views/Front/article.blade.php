@@ -13,7 +13,7 @@
                     <p>{{$article->intro}}</p>
                 </div>
                 <div>
-                    {{$article->content}}
+                    {!! $article->content !!}
                 </div>
             </article>
         </div>

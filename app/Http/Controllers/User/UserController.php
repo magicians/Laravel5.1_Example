@@ -6,7 +6,7 @@ use App\Ad;
 use App\Article;
 use App\Tag;
 
-use App\Http\Requests;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
@@ -57,5 +57,23 @@ class UserController extends Controller
             abort(404);
         }
         return view('front.article')->with('article', $article);
+    }
+
+    /**
+     * Display the home page.
+     *
+     * @param Request $requests
+     *
+     */
+    public function scopeSearch(Request $requests)
+    {
+        $keyword = $requests->get('q');
+        $results = null;
+        if (isset($keyword) && trim($keyword) != "") {
+            $results = Article::select('id', 'title', 'intro', 'page_image')
+                ->where('title', 'LIKE', '%' . $keyword . '%')
+                ->get();
+        }
+        return view('front.search')->with('articles', $results);
     }
 }

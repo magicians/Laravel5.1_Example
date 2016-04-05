@@ -28,9 +28,10 @@
         <nav id="bs-navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="visible-xs">
-                    <form action="" method="GET" role="search">
+                    <form action="/search" method="GET" role="search">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="q" placeholder="Search for snippets">
+                            <input type="text" class="form-control" name="q"
+                                   placeholder="Search for snippets">
 								<span class="input-group-btn">
 									<button class="btn btn-primary" type="submit">
                                         <span class="iconfont">&#xe674;</span>
@@ -53,7 +54,7 @@
             </ul>
             <div class="news-search animate">
                 <div class="container">
-                    <form action="" method="GET" role="search">
+                    <form action="/search" method="GET" role="search">
                         <div class="input-group">
                             <input type="text" class="form-control" name="q"
                                    placeholder="Search for snippets and hit enter">

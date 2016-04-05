@@ -14,6 +14,7 @@
 Route::get('/', 'User\UserController@index');
 Route::get('/subject/{id}', 'User\UserController@subject');
 Route::get('/article/{id}', 'User\UserController@showArticle');
+Route::get('/search', 'User\UserController@scopeSearch');
 
 // Routes for the authors
 Route::resource('author/article', 'Author\ArticleController');

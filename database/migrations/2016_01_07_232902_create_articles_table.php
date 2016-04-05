@@ -15,9 +15,9 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->string('title');
+            $table->string('title')->index();
             $table->text('intro');
-            $table->string('is_carousel')->default(false);
+            $table->boolean('is_carousel')->default(false);
             $table->string('page_image');
             $table->text('content');
             $table->timestamp('published_at');

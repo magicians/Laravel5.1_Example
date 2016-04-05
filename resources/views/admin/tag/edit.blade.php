@@ -45,19 +45,16 @@
                                         <i class="glyphicon glyphicon-remove"></i>
                                         Delete
                                     </button>
-
                                 </div>
                             </div>
-
                         </form>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    {{-- 确认删除 --}}
+    {{-- comfirm delete --}}
     <div class="modal fade" id="modal-delete" tabIndex="-1">
         <div class="modal-dialog">
             <div class="modal-content">

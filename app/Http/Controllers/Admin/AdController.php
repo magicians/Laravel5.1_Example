@@ -88,13 +88,12 @@ class AdController extends Controller
     public function update(Request $request, $id)
     {
         $ad = Ad::findOrFail($id);
-        dd($ad);
         $ad->name = $request->get('ad_name');
         $ad->url = $request->get('ad_url');
         $ad->image_path = $request->get('image_path');
         $ad->save();
         return redirect('/admin/ad')
-            ->withSuccess("Changes saved.");
+            ->withSuccess($ad->name . " changes saved.");
     }
 
     /**

@@ -56,5 +56,17 @@
                 </div>
             </div>
         </div>
+        <div class="module-ads">
+            <div class="row">
+                @if($i=0)
+                @endif
+                @foreach($ads as $ad)
+                    <div class="col-xs-12 col-sm-6 module-ad @if($i++==1) hidden-xs @endif">
+                        <img src="{{$ad->image_path}}" alt="{{$ad->name}}" class="img-responsive ad-image">
+                        <a class="article-link" href="http://{{$ad->url}}"></a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
     </div>
 @endsection

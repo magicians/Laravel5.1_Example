@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Ad;
 use App\Article;
 use App\Tag;
 
@@ -19,9 +20,11 @@ class UserController extends Controller
             ->where('is_carousel', true)->get();
         $latest_news = Article::select('id', 'title', 'intro', 'page_image')->where('is_checked', true)
             ->orderBy('published_at', 'desc')->take(4)->get();
+        $ads = Ad::select('url', 'name', 'image_path')->orderBy('created_at', 'desc')->take(2)->get();
         return view('front.index')
             ->with('carousel_news', $carousel_news)
-            ->with('latest_news', $latest_news);
+            ->with('latest_news', $latest_news)
+            ->with('ads', $ads);
     }
 
     /**

@@ -144,6 +144,9 @@ $navbar-default-link-hover-bg: #3468a2;
 
 .carousel {
   padding: 0 5px 5px;
+  img {
+    margin: auto;
+  }
   @media (max-width: $screen-sm-min) {
     margin-bottom: 10px;
   }
@@ -265,4 +268,10 @@ $navbar-default-link-hover-bg: #3468a2;
     border-bottom: 1px solid #dcdcdc;
     margin-bottom: 16px;
   }
+}
+
+.ad-image {
+  margin: auto;
+  max-height: 90px;
+  width: 570px;
 }

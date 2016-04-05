@@ -36,13 +36,12 @@ Route::get('author/browse', [
 ]);
 
 //route for the admins
-Route::resource('admin/article', 'Admin\ArticleController',
-    ['only' => ['index', 'show', 'update']]);
-Route::resource('admin/tag', 'Admin\TagController',
-    ['except' => ['show']]);
-Route::resource('admin/user', 'Admin\UserController');
 Route::resource('admin/ad', 'Admin\AdController');
-
+Route::post('/admin/ad/{id}', 'Admin\AdController@update');
+Route::resource('admin/article', 'Admin\ArticleController', ['only' => ['index', 'show', 'update']]);
+Route::resource('admin/tag', 'Admin\TagController', ['except' => ['show']]);
+Route::resource('admin/user', 'Admin\UserController');
+//Route::post('/admin/ad/{id}', 'Admin\AdController@update');
 // Authentication routes...
 Route::get('/login', 'Auth\AuthController@getLogin');
 Route::post('/login', 'Auth\AuthController@postLogin');

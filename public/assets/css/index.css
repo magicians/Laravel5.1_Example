@@ -5386,6 +5386,10 @@ button.close {
   padding: 0 5px 5px;
 }
 
+.carousel img {
+  margin: auto;
+}
+
 @media (max-width: 768px) {
   .carousel {
     margin-bottom: 10px;
@@ -5522,4 +5526,10 @@ button.close {
   color: #737373;
   border-bottom: 1px solid #dcdcdc;
   margin-bottom: 16px;
+}
+
+.ad-image {
+  margin: auto;
+  max-height: 90px;
+  width: 570px;
 }

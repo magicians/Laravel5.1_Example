@@ -24,8 +24,9 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <div class="form-group">
-                                <label for="tag" class="col-md-3 control-label">Ad. name</label>
-
+                                <label for="tag" class="col-md-3 control-label">
+                                    Ad. name
+                                </label>
                                 <div class="col-md-3">
                                     <input type="text" class="form-control" name="ad_name" id="name"
                                            value="{{old('name')}}" autofocus>
@@ -35,9 +36,9 @@
                                 <label for="ad_url" class="col-md-3 control-label">
                                     Url
                                 </label>
-
-                                <div class="col-md-8">
-                                    <input class="form-control" name="ad_url" id="ad_url"
+                                <div class="col-md-8 input-group">
+                                    <span class="input-group-addon" id="basic-addon">http://</span>
+                                    <input class="form-control" name="ad_url" id="ad_url" aria-describedby="basic-addon"
                                            type="text" value="{{old('url')}}">
                                 </div>
                             </div>

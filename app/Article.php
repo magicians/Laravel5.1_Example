@@ -11,6 +11,7 @@ class Article extends Model
         'user_id',
         'title',
         'intro',
+        'is_carousel',
         'page_image',
         'content',
         'published_at',

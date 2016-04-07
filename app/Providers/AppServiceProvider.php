@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('front.nav', function ($view) {
-            view()->share('tags', Tag::select('id', 'name')->get());
+            view()->share('tags', Tag::select('id', 'name')->orderBy('id', 'asc')->get());
         });
     }
 

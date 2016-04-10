@@ -21,6 +21,7 @@
             </a>
             <ul class="dropdown-menu" role="menu">
                 <li><a href="/logout">Log out</a></li>
+                <li><a href="/system/profile">Profile</a></li>
             </ul>
         </li>
     @endif

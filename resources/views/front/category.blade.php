@@ -24,3 +24,11 @@
         </div>
     </div>
 @endsection
+
+@section('pagination')
+    <div>
+        <ul class="pagination">
+            {!! $articles->render() !!}
+        </ul>
+    </div>
+@endsection

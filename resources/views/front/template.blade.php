@@ -73,6 +73,7 @@
 
 
 @yield('content')
+@yield('pagination')
 
 <script src="/assets/js/libraries.min.js"></script>
 <script src="/assets/js/index.js"></script>

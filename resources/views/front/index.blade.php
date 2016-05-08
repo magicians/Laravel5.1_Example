@@ -68,5 +68,21 @@
                 @endforeach
             </div>
         </div>
+        <div class="module-index-article">
+            @foreach($index_articles as $index_article)
+                <div>
+                    <p>{{$index_article->name}}</p>
+                    @foreach($index_article->articles as $article)
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="responsive-image hidden-xs">
+                                <img src="{{$article->page_image}}" alt="{{$article->title}}"
+                                     class="img-responsive">
+                            </div>
+                            <a class="article-link" href="/article/{{$article->article_id}}"></a>
+                        </div>
+                    @endforeach
+                </div>
+            @endforeach
+        </div>
     </div>
 @endsection

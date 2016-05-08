@@ -27,8 +27,6 @@
 
 @section('pagination')
     <div>
-        <ul class="pagination">
-            {!! $articles->render() !!}
-        </ul>
+        {!! $articles->render() !!}
     </div>
 @endsection

@@ -29,10 +29,26 @@ class UserController extends Controller
         $ads = Ad::select('url', 'name', 'image_path')
             ->orderBy('created_at', 'desc')
             ->take(2)->get();
+        // get the index article
+        $tags = Tag::select('id', 'name')
+            ->where('show_index', true)
+            ->get();
+        $index_articles = array();
+        foreach ($tags as $tag) {
+            $tag['articles'] = $tag->articles()
+                ->select('article_id', 'title', 'intro', 'page_image')
+                ->where('is_checked', true)
+                ->published()
+                ->orderBy('published_at', 'desc')
+                ->take(3)->get();
+            $index_articles[] = $tag;
+        }
+
         return view('front.index')
             ->with('carousel_news', $carousel_news)
             ->with('latest_news', $latest_news)
-            ->with('ads', $ads);
+            ->with('ads', $ads)
+            ->with('index_articles', $index_articles);
     }
 
     /**

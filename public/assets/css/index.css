@@ -5377,7 +5377,7 @@ button.close {
   }
 
   .article-layout-flex > .article-list {
-    padding: 0 5px;
+    padding-right: 5px;
     margin-bottom: 1em;
   }
 }
@@ -5532,4 +5532,17 @@ button.close {
   margin: auto;
   max-height: 90px;
   width: 570px;
+}
+
+.module-title {
+  font-size: 20px;
+}
+
+.module-title .module-title-link {
+  color: #4a4a4a;
+}
+
+.module-title .module-title-link:hover {
+  color: #000;
+  text-decoration: none;
 }

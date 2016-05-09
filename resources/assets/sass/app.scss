@@ -136,7 +136,7 @@ $navbar-default-link-hover-bg: #3468a2;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     > .article-list {
-      padding: 0 5px;
+      padding-right: 5px;
       margin-bottom: 1em;
     }
   }
@@ -274,4 +274,15 @@ $navbar-default-link-hover-bg: #3468a2;
   margin: auto;
   max-height: 90px;
   width: 570px;
+}
+
+.module-title {
+  font-size: 20px;
+  .module-title-link {
+    color: #4a4a4a;
+    &:hover {
+      color: #000;
+      text-decoration: none;
+    }
+  }
 }

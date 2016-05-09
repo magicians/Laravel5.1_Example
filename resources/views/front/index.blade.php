@@ -69,20 +69,34 @@
             </div>
         </div>
         <div class="module-index-article">
-            @foreach($index_articles as $index_article)
-                <div>
-                    <p>{{$index_article->name}}</p>
-                    @foreach($index_article->articles as $article)
-                        <div class="col-sm-12 col-lg-4">
-                            <div class="responsive-image hidden-xs">
-                                <img src="{{$article->page_image}}" alt="{{$article->title}}"
-                                     class="img-responsive">
-                            </div>
-                            <a class="article-link" href="/article/{{$article->article_id}}"></a>
+            <div class="row">
+                @foreach($index_articles as $index_article)
+                    <div>
+                        <h2 class="module-title">
+                            <a href="/subject/{{$index_article->id}}" class="module-title-link">
+                                {{$index_article->name}}
+                            </a>
+                        </h2>
+                        <div class="article-layout-flex">
+                            @foreach($index_article->articles as $article)
+                                <div class="article-list col-xs-12 col-sm-4">
+                                    <article class="article-item">
+                                        <div class="article-image responsive-image">
+                                            <img src="{{$article->page_image}}" alt="{{$article->title}}"
+                                                 class="img-responsive">
+                                        </div>
+                                        <div class="article-text">
+                                            <h3 class="article-title">{{$article->title}}</h3>
+                                            <p class="article-intro">{{$article->intro}}</p>
+                                        </div>
+                                        <a class="article-link" href="/article/{{$article->article_id}}"></a>
+                                    </article>
+                                </div>
+                            @endforeach
                         </div>
-                    @endforeach
-                </div>
-            @endforeach
+                    </div>
+                @endforeach
+            </div>
         </div>
     </div>
 @endsection

@@ -47,22 +47,9 @@ class TagController extends Controller
      */
     public function store(TagCreateUpdateRequest $request)
     {
-        $tag = new Tag();
-        $tag->name = $request->get('name');
-        $tag->save();
+        $tag = Tag::create($request->tagFillData());
         return redirect('/admin/tag')
             ->withSuccess("The tag '$tag->name' was created.");
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -74,7 +61,7 @@ class TagController extends Controller
     public function edit($id)
     {
         $tag = Tag::findOrFail($id);
-        $data = ['id' => $id, 'name' => $tag->name];
+        $data = ['id' => $id, 'name' => $tag->name, 'show_index' => $tag->show_index];
         return view('admin.tag.edit', $data);
     }
 
@@ -88,7 +75,7 @@ class TagController extends Controller
     public function update(TagCreateUpdateRequest $request, $id)
     {
         $tag = Tag::findOrFail($id);
-        $tag->name = $request->get('name');
+        $tag->fill($request->tagFillData());
         $tag->save();
         return redirect('/admin/tag')
             ->withSuccess("Changes saved.");

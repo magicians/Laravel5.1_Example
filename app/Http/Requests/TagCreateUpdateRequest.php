@@ -23,7 +23,18 @@ class TagCreateUpdateRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required | unique:tags,name',
+            'name' => 'required',
+        ];
+    }
+
+    /**
+     * Return the fields and values to create a tag article from
+     */
+    public function tagFillData()
+    {
+        return [
+            'name' => $this->name,
+            'show_index' => $this->show_index == "yes",
         ];
     }
 }

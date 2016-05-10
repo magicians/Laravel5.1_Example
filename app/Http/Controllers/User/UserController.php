@@ -98,7 +98,7 @@ class UserController extends Controller
                 ->where('title', 'LIKE', '%' . $keyword . '%')
                 ->where('is_checked', true)
                 ->published()
-                ->get();
+                ->paginate(10);
         }
         return view('front.search')->with('articles', $results);
     }

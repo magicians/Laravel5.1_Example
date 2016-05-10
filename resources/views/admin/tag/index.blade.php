@@ -26,6 +26,7 @@
                     <thead>
                     <tr>
                         <th>Tag</th>
+                        <th>Show index</th>
                         <th data-sortable="false">Actions</th>
                     </tr>
                     </thead>
@@ -33,6 +34,7 @@
                     @foreach ($tags as $tag)
                         <tr>
                             <td>{{ $tag->name }}</td>
+                            <td>{{$tag->show_index == true ? 'Yes' : ''}}</td>
                             <td>
                                 <a href="/admin/tag/{{ $tag->id }}/edit" class="btn btn-xs btn-info">
                                     <i class="glyphicon glyphicon-pencil"></i> Edit

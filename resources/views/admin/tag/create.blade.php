@@ -28,7 +28,21 @@
 
                                 <div class="col-md-3">
                                     <input type="text" class="form-control" name="name" id="tag"
-                                           value="{{ $name }}" autofocus>
+                                           value="{{ $name }}" autofocus required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Show index?</label>
+                                <div class="col-md-3">
+                                    <label class="radio-inline">
+                                        <input name="show_index" id="radio1" value="yes" type="radio">
+                                        Yes
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input name="show_index" id="radio2" value="no" checked="checked" type="radio">
+                                        No
+                                    </label>
                                 </div>
                             </div>
 

@@ -35,6 +35,22 @@
                             </div>
 
                             <div class="form-group">
+                                <label class="col-sm-3 control-label">Show index?</label>
+                                <div class="col-md-3">
+                                    <label class="radio-inline">
+                                        <input name="show_index" id="radio1" value="yes" type="radio"
+                                               @if($show_index) checked @endif>
+                                        Yes
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input name="show_index" id="radio2" value="no" type="radio"
+                                               @if(!$show_index) checked @endif>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <div class="col-md-7 col-md-offset-3">
                                     <button type="submit" class="btn btn-primary btn-md">
                                         <i class="glyphicon glyphicon-floppy-disk"></i>
